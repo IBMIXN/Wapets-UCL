@@ -6,7 +6,7 @@ by Natalia del Mar
 This is a project developed as part of the UCL IXN - Industry Exchange Network for IBM. It is an explorative application that uses IBM Watson services too understand the potential benefits of conversational pets on the health of the elder.
 
 ## Context
-Loneliness and social isolation are severe common problems in the elder generations \cite{lazlo}. Web application like social media messaging and video platforms have demonstrated to be beneficial for the mental health of the elder, increasing their feeling of mattering, their mood and their social engagement with the outer world. However, elder generations have a gap of experience with mobile and portable IT devices, as well as with web applications.
+Loneliness and social isolation are severe common problems in the elder generations. Web application like social media messaging and video platforms have demonstrated to be beneficial for the mental health of the elder, increasing their feeling of mattering, their mood and their social engagement with the outer world. However, elder generations have a gap of experience with mobile and portable IT devices, as well as with web applications.
 
 Aditionally, attempts to mitigate loneliness and social isolation, and their negative effects in the health of the elder have been achieved successfully with the use of robotic pets. They create an emotional bonding with the owner and become their playful friends, just like a real pet. Similarly, conversational agents have proved to also receive positive results on loneliness and social isolation in elder users. 
 
