@@ -1,0 +1,1157 @@
+{
+  "intents": [
+    {
+      "intent": "Abort",
+      "examples": [
+        {
+          "text": "I don't want to continue"
+        },
+        {
+          "text": "I don't want to do this anymore"
+        },
+        {
+          "text": "I want to stop"
+        },
+        {
+          "text": "Nevermind"
+        },
+        {
+          "text": "No worries"
+        },
+        {
+          "text": "Stop"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Found",
+      "examples": [
+        {
+          "text": "f7902afe-d7a9-4a8d-9df4-76226126083a"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greetings",
+      "examples": [
+        {
+          "text": "Aloha"
+        },
+        {
+          "text": "Appearance"
+        },
+        {
+          "text": "Good afternoon"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hi hi!"
+        },
+        {
+          "text": "How are you?"
+        },
+        {
+          "text": "I am here"
+        },
+        {
+          "text": "User woke up"
+        },
+        {
+          "text": "Wakes up"
+        }
+      ],
+      "description": "When the user appears in the room during the day, and if Sandy is its favorite pet."
+    },
+    {
+      "intent": "IWantToReadMyMessages",
+      "examples": [
+        {
+          "text": "Can you read my message?"
+        },
+        {
+          "text": "Hear"
+        },
+        {
+          "text": "I want to read a message"
+        },
+        {
+          "text": "I want to read a message."
+        },
+        {
+          "text": "I would like to hear a message from"
+        },
+        {
+          "text": "I would like to hear the messages I received"
+        },
+        {
+          "text": "I would like to read a message"
+        },
+        {
+          "text": "I would like to read my messages"
+        },
+        {
+          "text": "read a message"
+        },
+        {
+          "text": "Read message"
+        },
+        {
+          "text": "What did a person send me on Facebook?"
+        },
+        {
+          "text": "What messages did I receive?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "MessageReceivedFacebook",
+      "examples": [
+        {
+          "text": "FacebookMessageReceived"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "messageSent",
+      "examples": [
+        {
+          "text": "ACTION APPROVED"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "NegativeAnswer",
+      "examples": [
+        {
+          "text": "I do not want"
+        },
+        {
+          "text": "I don't know"
+        },
+        {
+          "text": "I don't want"
+        },
+        {
+          "text": "I prefer not to"
+        },
+        {
+          "text": "No"
+        },
+        {
+          "text": "No, I don't feel like doing that"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "NotFound",
+      "examples": [
+        {
+          "text": "0ce1be4d-4e19-476b-ad14-8c83473fd6d6"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "PositiveAnswer",
+      "examples": [
+        {
+          "text": "Correct"
+        },
+        {
+          "text": "I want"
+        },
+        {
+          "text": "Let's do that"
+        },
+        {
+          "text": "Lets start"
+        },
+        {
+          "text": "Ok"
+        },
+        {
+          "text": "Sure"
+        },
+        {
+          "text": "That is correct"
+        },
+        {
+          "text": "Yes"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "WantToSendAMessage",
+      "examples": [
+        {
+          "text": "Get in contact with someone"
+        },
+        {
+          "text": "I want to tell something to someone"
+        },
+        {
+          "text": "I want to text someone"
+        },
+        {
+          "text": "I would like to send a message"
+        },
+        {
+          "text": "Send a facebook message"
+        },
+        {
+          "text": "Send a message"
+        },
+        {
+          "text": "Send a text"
+        },
+        {
+          "text": "Text someone"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_9_1596039219550",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Repeat name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Is it correct that you want to send a messages to $receptorName ?"
+              },
+              {
+                "text": "You would want to send a message to $receptorName, is that correct?"
+              },
+              {
+                "text": "$receptorName... did I hear the name right?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1596035328752",
+      "context": {
+        "receptorName": "<? input.text ?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_10_1596819881053"
+    },
+    {
+      "type": "standard",
+      "title": "Hear name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Is it correct that you want to hear the messages from $hearUserName ?"
+              },
+              {
+                "text": "You would want to hear the last message from $hearUserName, is that correct?"
+              },
+              {
+                "text": "$hearUserName... did I hear the name right?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1596646966131",
+      "context": {
+        "hearUserName": "<? input.text ?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_1_1596651782723"
+    },
+    {
+      "type": "standard",
+      "title": "Ask message",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "On the count of 3 please tell me the message you would want me to send to $hearUserName... Ready? 1... 2... 3!"
+              },
+              {
+                "text": "Let me hear the message you would like to send to $hearUserName. On the count of 3.... 1.... 2... 3!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1596805501838",
+      "context": {},
+      "conditions": "true",
+      "dialog_node": "node_1_1596805982398"
+    },
+    {
+      "type": "standard",
+      "title": "Message received from Facebook",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You just received a message via Facebook from senderUserName. Let me know when you want to hear it."
+              },
+              {
+                "text": "Hey, watsonUserName! You just got a Facebook message from senderUserName. Let me know when you want to hear it."
+              },
+              {
+                "text": "A message just arrived from senderUserName. Let me know when you want to hear it."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#MessageReceivedFacebook",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1596452437581",
+      "previous_sibling": "node_8_1596035328752"
+    },
+    {
+      "type": "standard",
+      "title": "I want to hear a message",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sure, who would you like to hear a message from?"
+              },
+              {
+                "text": "Of course... from who would you like to hear a message?"
+              },
+              {
+                "text": "Yes, sure, whose last message would you want to read?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {},
+      "conditions": "#IWantToReadMyMessages",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1596646966131",
+      "previous_sibling": "node_2_1596452437581"
+    },
+    {
+      "type": "standard",
+      "title": "Repeat message",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok, Is this the message you would like to send? $messageToSend"
+              },
+              {
+                "text": "Perfect, I will repeat the message: $messageToSend. Did I hear your right?"
+              },
+              {
+                "text": "Great! Let me see if I got the message correctly. I heard: $messageToSend. Is this correct? "
+              },
+              {
+                "text": "Awesome, let me tell you the message once again to see if I got it right. $messageToSend. Is that O.K.?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_1_1596805982398",
+      "context": {
+        "messageToSend": "<? input.text ?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1596805982402"
+    },
+    {
+      "type": "standard",
+      "title": "Positive Answer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great!"
+              },
+              {
+                "text": "Awesome!"
+              },
+              {
+                "text": "Perfect, let's do that then."
+              },
+              {
+                "text": "Of course!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1595516635370",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1596035328752"
+      },
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_3_1596034980835"
+    },
+    {
+      "type": "standard",
+      "title": "Name Found",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I found it. The last message from $hearUserName was: putmessagehere. Would you like to answer back?"
+              },
+              {
+                "text": "Got it! The last message from $hearUserName was: putmessagehere. Would you like to answer back?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_8_1596652322199",
+      "conditions": "#Found",
+      "dialog_node": "node_3_1596652656966"
+    },
+    {
+      "type": "standard",
+      "title": "Name not found",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry, you have not received any message from $hearUserName. Would you want to try to tell me the name again? "
+              },
+              {
+                "text": "It seems like $hearUserName has not sent you a message since I am here. Would you like to tell the name again?"
+              },
+              {
+                "text": "Sorry, I could not find any messages from $hearUserName. Do you want to tell me the name again?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1596652322199",
+      "conditions": "#NotFound",
+      "dialog_node": "node_3_1596652896372",
+      "previous_sibling": "node_3_1596652656966"
+    },
+    {
+      "type": "standard",
+      "title": "Positive Answer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great! I am sending this message to $hearUserName. I will let you know when he or she replies back. f7cc9279-53e2-4cfd-afcf-66997a60a0fd"
+              },
+              {
+                "text": "Perfect, I am sending now the message to $hearUserName. When he or she answers, I will tell you. f7cc9279-53e2-4cfd-afcf-66997a60a0fd"
+              },
+              {
+                "text": "Hurray! I have just sent the message to $hearUserName. I will keep you updated on any answer. f7cc9279-53e2-4cfd-afcf-66997a60a0fd"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_2_1596805982402",
+      "context": {
+        "messageSent": false,
+        "sendMessage": true
+      },
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_3_1596805982402"
+    },
+    {
+      "type": "standard",
+      "title": "Repeat message",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok, Is this the message you would like to send? $messageToSend"
+              },
+              {
+                "text": "Perfect, I will repeat the message: $messageToSend. Did I hear your right?"
+              },
+              {
+                "text": "Great! Let me see if I got the message correctly. I heard: $messageToSend. Is this correct? "
+              },
+              {
+                "text": "Awesome, let me tell you the message once again to see if I got it right. $messageToSend. Is that O.K.?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_6_1596037233421",
+      "context": {
+        "messageToSend": "<? input.text ?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_4_1596037913285"
+    },
+    {
+      "type": "standard",
+      "title": "Negative Answer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh sorry, my bad..."
+              },
+              {
+                "text": "Oh sorry, I heard it wrong... let's try again!"
+              },
+              {
+                "text": "Oh sorry, let's try again!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1596037913285",
+      "context": {
+        "receptorValidated": false
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_6_1596037233421"
+      },
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_4_1596038822500",
+      "previous_sibling": "node_7_1596038206732"
+    },
+    {
+      "type": "standard",
+      "title": "No, I don't want to try again",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh, ok! Let me know if I can help you with anything else."
+              },
+              {
+                "text": "No worries. Let me know if you want me to assist you with anything."
+              },
+              {
+                "text": "Great, I will be here in case you need anything."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1596652896372",
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_4_1596653166794",
+      "previous_sibling": "node_9_1596653059719"
+    },
+    {
+      "type": "standard",
+      "title": "Yes I want to answer back",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Alright then!"
+              },
+              {
+                "text": "Sure!"
+              },
+              {
+                "text": "Let's do it!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1596652656966",
+      "context": {
+        "receptorName": "$hearUserName"
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_4_1596805501838",
+      "previous_sibling": "node_6_1596805312052"
+    },
+    {
+      "type": "standard",
+      "title": "Change variable",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_3_1596805982402",
+      "context": {
+        "messageSent": false,
+        "sendMessage": false,
+        "receptorValidated": false
+      },
+      "conditions": "$messageSent && #messageSent",
+      "dialog_node": "node_4_1596805982402"
+    },
+    {
+      "type": "standard",
+      "title": "Negative Answer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh sorry, my bad..."
+              },
+              {
+                "text": "Oh sorry, I heard it wrong... let's try again!"
+              },
+              {
+                "text": "Oh sorry, let's try again!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1596805982402",
+      "context": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_1_1596805982398"
+      },
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_5_1596805982402",
+      "previous_sibling": "node_3_1596805982402"
+    },
+    {
+      "type": "standard",
+      "title": "Yes, it is the correct name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "73e038f4-2c8d-48f7-be50-34e2c3415f4e"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1596819881053",
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_5_1596820167802"
+    },
+    {
+      "type": "standard",
+      "title": "No, it is not the correct name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh sorry! tell me the name again, please."
+              },
+              {
+                "text": "Oh my bad! Could you please tell me the name again, please?"
+              },
+              {
+                "text": "Oh sorry, would you tell me the name again, please?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1596819881053",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_10_1596819881053"
+      },
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_5_1596820295683",
+      "previous_sibling": "node_5_1596820167802"
+    },
+    {
+      "type": "standard",
+      "title": "Ask for message",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great, I found this name. On the count of 3 please tell me the message you would want me to send to $receptorName... Ready? 1... 2... 3!"
+              },
+              {
+                "text": "Perfect, I found this name. Let me hear the message you would like to send to $receptorName. On the count of 3.... 1.... 2... 3!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1596820167802",
+      "context": {},
+      "conditions": "#Found",
+      "dialog_node": "node_6_1596037233421"
+    },
+    {
+      "type": "standard",
+      "title": "No I don't want to answer back",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "No problem, you can always answer later."
+              },
+              {
+                "text": "Ok, great! Let me know if you want to read or send any other message."
+              },
+              {
+                "text": "No rush, we can always answer later."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1596652656966",
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_6_1596805312052"
+    },
+    {
+      "type": "standard",
+      "title": "Yes, I would want to try again",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great! Please tell me the name of the person you would want to send a message to."
+              },
+              {
+                "text": "Awesome! Tell me, please, the Facebook name of the person you would want to send a message to."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_8_1596820740301",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_10_1596819881053"
+      },
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_6_1596822050907"
+    },
+    {
+      "type": "standard",
+      "title": "Positive Answer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great! I am sending this message to $receptorName. I will let you know when he or she replies back. f7cc9279-53e2-4cfd-afcf-66997a60a0fd"
+              },
+              {
+                "text": "Perfect, I am sending now the message to $receptorName. When he or she answers, I will tell you. f7cc9279-53e2-4cfd-afcf-66997a60a0fd"
+              },
+              {
+                "text": "Hurray! I have just sent the message to $receptorName. I will keep you updated on any answer. f7cc9279-53e2-4cfd-afcf-66997a60a0fd"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_4_1596037913285",
+      "context": {},
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_7_1596038206732"
+    },
+    {
+      "type": "standard",
+      "title": "No, I don't want to try again",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh, ok! Let me know if I can help you with anything else."
+              },
+              {
+                "text": "No worries. Let me know if you want me to assist you with anything."
+              },
+              {
+                "text": "Great, I will be here in case you need anything."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1596820740301",
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_7_1596822153614",
+      "previous_sibling": "node_6_1596822050907"
+    },
+    {
+      "type": "standard",
+      "title": "I want to send a message - Ask name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Who do you want to send this message to?"
+              },
+              {
+                "text": "Who would you want to message?"
+              },
+              {
+                "text": "To which person would you like to send the message?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {},
+      "conditions": "#WantToSendAMessage",
+      "dialog_node": "node_8_1596035328752",
+      "previous_sibling": "node_9_1595516635370"
+    },
+    {
+      "type": "standard",
+      "title": "Yes, it is the correct name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "a58f6ca1-fffc-4507-b0ba-79b8c4f2a49a"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1596651782723",
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_8_1596652322199"
+    },
+    {
+      "type": "standard",
+      "title": "Name not found",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry, you have not received any message from $receptorName. You would need to receive at least a message from him so that I can find this name and send a message on your name. Would you want to try to tell me the name again? "
+              },
+              {
+                "text": "It seems like $receptorName has not sent you a message since I am here. You would need to receive at least a message from him so that I can find this name and send a message on your name. Would you like to tell the name again?"
+              },
+              {
+                "text": "Sorry, I could not find any messages from $hearUserName. You would need to receive at least a message from him so that I can find this name and send a message on your name. Do you want to tell me the name again?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1596820167802",
+      "conditions": "#NotFound",
+      "dialog_node": "node_8_1596820740301",
+      "previous_sibling": "node_6_1596037233421"
+    },
+    {
+      "type": "standard",
+      "title": "Greetings",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey there, watsonUserName! What do you think of looking or sending some messages today?"
+              },
+              {
+                "text": "Hi, watsonUserName... I am glad to see you! Do you want to send new messages today?"
+              },
+              {
+                "text": "Hello, watsonUserName! It is always good to see you! What about sending messages to your loved ones?"
+              },
+              {
+                "text": "Hi, watsonUserName! I hope you are having a good day... Do you feel like sending some messages to your friends?"
+              },
+              {
+                "text": "Hello there, watsonUserName! What about sending some messages to your family? They may get very happy to hear from you!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Greetings",
+      "dialog_node": "node_9_1595516635370"
+    },
+    {
+      "type": "standard",
+      "title": "Negative Answer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh ok, no problem! Let me know if you want to do anything else."
+              },
+              {
+                "text": "No problem, you can always send messages another time."
+              },
+              {
+                "text": "Of course, I understand. Let's think of something else to do!"
+              },
+              {
+                "text": "Oh ok, no problem... what are do you feel like doing then?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1595516635370",
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_9_1596035164998",
+      "previous_sibling": "node_3_1596034980835"
+    },
+    {
+      "type": "standard",
+      "title": "Abort Mission",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok, no worries... let me know if you need anything!"
+              },
+              {
+                "text": "Oh, no problem... I will be here anytime you need me."
+              },
+              {
+                "text": "Oh, that is alright... We can do something else if you want."
+              },
+              {
+                "text": "Good, I will be here to help you in anything,"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Abort",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1596039219550",
+      "previous_sibling": "node_2_1596646966131"
+    },
+    {
+      "type": "standard",
+      "title": "No, it is not the correct name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh sorry! tell me the name again, please."
+              },
+              {
+                "text": "Oh my bad! Could you please tell me the name again, please?"
+              },
+              {
+                "text": "Oh sorry, would you tell me the name again, please?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1596651782723",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1596651782723"
+      },
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_9_1596652781597",
+      "previous_sibling": "node_8_1596652322199"
+    },
+    {
+      "type": "standard",
+      "title": "Yes, I would want to try again",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great! Please tell me the name of the person you would want to hear a message from."
+              },
+              {
+                "text": "Awesome! Tell me, please, the Facebook name of the person you would want to hear a message from."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_3_1596652896372",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1596651782723"
+      },
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_9_1596653059719"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "SandyBot",
+  "language": "en",
+  "description": ""
+}

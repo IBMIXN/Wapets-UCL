@@ -1,0 +1,835 @@
+{
+  "intents": [
+    {
+      "intent": "CallDuke",
+      "examples": [
+        {
+          "text": "Duke"
+        },
+        {
+          "text": "Duke,"
+        },
+        {
+          "text": "Duke, question"
+        },
+        {
+          "text": "Hello Duke"
+        },
+        {
+          "text": "Hi Duke"
+        },
+        {
+          "text": "I want to talk to Duke"
+        },
+        {
+          "text": "Where is Duke"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "CallOmar",
+      "examples": [
+        {
+          "text": "Call Omar"
+        },
+        {
+          "text": "Hello Omar"
+        },
+        {
+          "text": "Hi Omar"
+        },
+        {
+          "text": "Omar"
+        },
+        {
+          "text": "Omar, question"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "CallSandy",
+      "examples": [
+        {
+          "text": "Call Sandy"
+        },
+        {
+          "text": "Sandy"
+        },
+        {
+          "text": "Sandy, question"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Feelings",
+      "examples": [
+        {
+          "text": "a am feeling lonely"
+        },
+        {
+          "text": "a little depressed"
+        },
+        {
+          "text": "feelings"
+        },
+        {
+          "text": "Happy"
+        },
+        {
+          "text": "I am feeling"
+        },
+        {
+          "text": "I am feeling a little sad"
+        },
+        {
+          "text": "Not so good"
+        },
+        {
+          "text": "Sad"
+        },
+        {
+          "text": "Very happy today"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greetings",
+      "examples": [
+        {
+          "text": "Aloha"
+        },
+        {
+          "text": "Appear"
+        },
+        {
+          "text": "First appearance"
+        },
+        {
+          "text": "Good afternoon"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "I am here"
+        },
+        {
+          "text": "User woke up"
+        },
+        {
+          "text": "Wakes up"
+        },
+        {
+          "text": "Waking up"
+        }
+      ],
+      "description": "When the user appears in the room."
+    },
+    {
+      "intent": "IWantToConfirmInterests",
+      "examples": [
+        {
+          "text": "confirm interests"
+        },
+        {
+          "text": "do you have any doubts about my interests?"
+        },
+        {
+          "text": "I have a new interest"
+        },
+        {
+          "text": "I would like to confirm some interests"
+        },
+        {
+          "text": "I would like to talk about my interests"
+        },
+        {
+          "text": "I would like to tell a new interest"
+        },
+        {
+          "text": "new interest"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "IWantToHearMessages",
+      "examples": [
+        {
+          "text": "can you read my message"
+        },
+        {
+          "text": "hear a message"
+        },
+        {
+          "text": "I want to read a message"
+        },
+        {
+          "text": "I would like to hear a message from"
+        },
+        {
+          "text": "I would like to hear the messages I received"
+        },
+        {
+          "text": "I would like to read a message"
+        },
+        {
+          "text": "I would like to read my messages"
+        },
+        {
+          "text": "read a message"
+        },
+        {
+          "text": "Read message"
+        },
+        {
+          "text": "What did a person send me on Facebook"
+        },
+        {
+          "text": "What messages did I receive?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "IWantToHearOrSeeVideos",
+      "examples": [
+        {
+          "text": "Interests"
+        },
+        {
+          "text": "I want to hear videos"
+        },
+        {
+          "text": "I want to see videos in Youtube"
+        },
+        {
+          "text": "I would like to hear about my interests"
+        },
+        {
+          "text": "Videos"
+        },
+        {
+          "text": "Youtube"
+        }
+      ]
+    },
+    {
+      "intent": "IWantToSendMessages",
+      "examples": [
+        {
+          "text": "Facebook"
+        },
+        {
+          "text": "I want to send messages to someone"
+        },
+        {
+          "text": "Message"
+        },
+        {
+          "text": "Send a message"
+        },
+        {
+          "text": "Send messages"
+        },
+        {
+          "text": "Text someone"
+        },
+        {
+          "text": "Twitter"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "MessageReceivedFacebook",
+      "examples": [
+        {
+          "text": "FacebookMessageReceived"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "NegativeAnswer",
+      "examples": [
+        {
+          "text": "Don't like"
+        },
+        {
+          "text": "I wouldn't like"
+        },
+        {
+          "text": "No"
+        },
+        {
+          "text": "Nope"
+        },
+        {
+          "text": "No thanks!"
+        },
+        {
+          "text": "No thank you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "OmarSystemCalls",
+      "examples": [
+        {
+          "text": "50a7c6dc-53b0-44cb-8fa7-47e27eb60854"
+        },
+        {
+          "text": "5c21c58f-72a1-4a82-9e94-47dd1cccac4d"
+        },
+        {
+          "text": "6540bf96-201b-47db-8eac-18602d6677b0"
+        },
+        {
+          "text": "a0d8e1e4-6505-441a-9236-518de55a5dcf"
+        },
+        {
+          "text": "a97fc8ed-21a7-4a6a-89b0-5535ca0beacf"
+        },
+        {
+          "text": "c53ced4b-b69f-4702-aa8b-9f382508ed33"
+        },
+        {
+          "text": "cee27611-c066-407b-8717-c2fac6061b23"
+        },
+        {
+          "text": "d6557376-2247-4359-878e-c68236180a20"
+        },
+        {
+          "text": "e76e221d-ea9d-489a-9b6e-a4bfcd913b40"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "PositiveAnswer",
+      "examples": [
+        {
+          "text": "Let's do it"
+        },
+        {
+          "text": "Of course"
+        },
+        {
+          "text": "Yes"
+        },
+        {
+          "text": "Yes!"
+        },
+        {
+          "text": "Yes sure"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "SandySystemCalls",
+      "examples": [
+        {
+          "text": "0ce1be4d-4e19-476b-ad14-8c83473fd6d6"
+        },
+        {
+          "text": "73e038f4-2c8d-48f7-be50-34e2c3415f4e"
+        },
+        {
+          "text": "f7902afe-d7a9-4a8d-9df4-76226126083a"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "TurnOn",
+      "examples": [
+        {
+          "text": "Begin"
+        },
+        {
+          "text": "On"
+        },
+        {
+          "text": "Start"
+        },
+        {
+          "text": "Turn On"
+        }
+      ],
+      "description": "When a user tells us to turn on the system for the first time."
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Interests",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Cooking",
+          "synonyms": [
+            "bake",
+            "baking",
+            "chef",
+            "cook",
+            "cooker",
+            "cookery",
+            "cooks",
+            "cuisine",
+            "culinary",
+            "dining",
+            "fry",
+            "frying",
+            "gastronomy",
+            "grilling",
+            "kitchen",
+            "kitchens",
+            "pans",
+            "pastry",
+            "recipe",
+            "recipes",
+            "restaurant",
+            "stove"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Gardening",
+          "synonyms": [
+            "flowers",
+            "garden",
+            "grass cutting",
+            "horticulture",
+            "houseplants",
+            "hydroponics",
+            "landscape",
+            "landscaping",
+            "lawn",
+            "margaritas",
+            "plant",
+            "planting",
+            "roses",
+            "seeding",
+            "seedling",
+            "tulips"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Music",
+          "synonyms": [
+            "balads",
+            "band",
+            "bands",
+            "beethoven",
+            "classic music",
+            "concert",
+            "concerts",
+            "dance",
+            "dancing",
+            "instrumental",
+            "jazz",
+            "musical",
+            "musician",
+            "musicians",
+            "orchestra",
+            "piano",
+            "pop",
+            "rock",
+            "song",
+            "songs",
+            "trumpet",
+            "tunes"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Sports",
+          "synonyms": [
+            "athletics",
+            "badminton",
+            "baseball",
+            "basketball",
+            "bowling",
+            "cheerleading",
+            "cricket",
+            "fastpitch",
+            "footbal",
+            "football",
+            "futbol",
+            "game",
+            "golf",
+            "handball",
+            "hockey",
+            "league",
+            "leagues",
+            "liga",
+            "ligue",
+            "nba",
+            "ncaa",
+            "netball",
+            "nfl",
+            "rugby",
+            "soccer",
+            "softball",
+            "sport",
+            "sporting",
+            "squash",
+            "swimming",
+            "tennis",
+            "volleyball",
+            "waterpolo",
+            "weightlifting"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "AnythingElseBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_1_1597782773829",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "I want to watch videos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "OmarBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#IWantToHearOrSeeVideos",
+      "dialog_node": "node_10_1597845716335",
+      "previous_sibling": "node_3_1599065894538"
+    },
+    {
+      "type": "standard",
+      "title": "Omar System Calls",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "OmarBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#OmarSystemCalls",
+      "dialog_node": "node_1_1597782773829",
+      "previous_sibling": "node_8_1596809347237"
+    },
+    {
+      "type": "standard",
+      "title": "Turn On",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "WelcomeBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#TurnOn",
+      "dialog_node": "node_2_1594983070880",
+      "previous_sibling": "node_9_1595424296228"
+    },
+    {
+      "type": "standard",
+      "title": "Calling Duke directly",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "GreetingsToDuke"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#CallDuke",
+      "dialog_node": "node_2_1595424241621",
+      "previous_sibling": "node_5_1596112160610"
+    },
+    {
+      "type": "standard",
+      "title": "Calling Oliver directly",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "OmarBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#CallOmar",
+      "dialog_node": "node_2_1595424276920",
+      "previous_sibling": "node_2_1595424241621"
+    },
+    {
+      "type": "standard",
+      "title": "I want to send a message",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "SandyBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#IWantToSendMessages",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1596116081982",
+      "previous_sibling": "node_2_1594983070880"
+    },
+    {
+      "type": "standard",
+      "title": "Confirm intersts",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "OmarBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#IWantToConfirmInterests",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1599065894538",
+      "previous_sibling": "node_5_1600710533730"
+    },
+    {
+      "type": "standard",
+      "title": "Greeting",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Greetings"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Greetings",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1595349570685"
+    },
+    {
+      "type": "standard",
+      "title": "Positive or Negative Answers",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "AnythingElseBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#NegativeAnswer || #PositiveAnswer",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_5_1596112160610",
+      "previous_sibling": "node_9_1596452384102"
+    },
+    {
+      "type": "standard",
+      "title": "I want to read a message",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "SandyBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#IWantToHearMessages",
+      "dialog_node": "node_5_1596808478946",
+      "previous_sibling": "node_10_1597845716335"
+    },
+    {
+      "type": "standard",
+      "title": "Feelings",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "DukeBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Feelings",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_5_1600710533730",
+      "previous_sibling": "node_4_1595349570685"
+    },
+    {
+      "type": "standard",
+      "title": "Sandy System Calls",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "SandyBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#SandySystemCalls",
+      "dialog_node": "node_8_1596809347237",
+      "previous_sibling": "node_2_1596116081982"
+    },
+    {
+      "type": "standard",
+      "title": "Calling Sandy directly",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "SandyBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#CallSandy",
+      "dialog_node": "node_9_1595424296228",
+      "previous_sibling": "node_2_1595424276920"
+    },
+    {
+      "type": "standard",
+      "title": "Message received from Facebook",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "SandyBot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#MessageReceivedFacebook",
+      "dialog_node": "node_9_1596452384102",
+      "previous_sibling": "node_5_1596808478946"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "AgentBot",
+  "language": "en",
+  "description": ""
+}

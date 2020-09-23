@@ -1,0 +1,423 @@
+{
+  "intents": [
+    {
+      "intent": "NegativeAnswer",
+      "examples": [
+        {
+          "text": "I don't want that"
+        },
+        {
+          "text": "No"
+        },
+        {
+          "text": "No, it is ok"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "PositiveAnswer",
+      "examples": [
+        {
+          "text": "I would like that"
+        },
+        {
+          "text": "Ofc"
+        },
+        {
+          "text": "Of course"
+        },
+        {
+          "text": "Sure"
+        },
+        {
+          "text": "Yes"
+        },
+        {
+          "text": "yes sure"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "TurnOn",
+      "examples": [
+        {
+          "text": "Begin"
+        },
+        {
+          "text": "On"
+        },
+        {
+          "text": "Start"
+        },
+        {
+          "text": "Turn on pet"
+        }
+      ],
+      "description": "This intent is used when the pet is turned on for the first time. It aims to introduce the various pets to the user."
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry, I didn't get that. Can you try it again?"
+              },
+              {
+                "text": "I didn't understand that, can you repeat it?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_8_1594760135537",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Introduce Omar",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Then there is Omar, the Owl."
+              },
+              {
+                "text": "He is very curious. He would love to hear about your interests and look up information about them on the Internet."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_2_1594759788724",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_2_1594801180280"
+      },
+      "conditions": "true",
+      "dialog_node": "node_10_1594800973003",
+      "previous_sibling": "node_5_1594760848332"
+    },
+    {
+      "type": "standard",
+      "title": "I would like to meet them",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is your name?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "turnOnYesNo": false
+      },
+      "conditions": "$turnOnYesNo == true && #PositiveAnswer",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1594759788724",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Introduce Sandy",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Finally, for any assistance you need, there is Sandy the squirrel."
+              },
+              {
+                "text": "She is alert to any help you may need: you can ask her to send a message to a family member."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_2_1594759788724",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_5_1594802881259"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1594801180280",
+      "previous_sibling": "node_10_1594800973003"
+    },
+    {
+      "type": "standard",
+      "title": "Introduce Duke",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I first want to introduce you to Duke."
+              },
+              {
+                "text": "He is very positive and playful. He will always be happy to see you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_2_1594759788724",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_10_1594800973003"
+      },
+      "conditions": "true",
+      "dialog_node": "node_5_1594760848332",
+      "previous_sibling": "node_7_1594760511557"
+    },
+    {
+      "type": "standard",
+      "title": "Confirm name",
+      "parent": "node_7_1594760511557",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_5_1594760848332"
+      },
+      "conditions": "$nameConfirmation",
+      "dialog_node": "node_5_1594761216996"
+    },
+    {
+      "type": "standard",
+      "title": "End Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please take good care of them, they like being around you."
+              },
+              {
+                "text": "When you want to call them, just say their names: Duke, Omar and Sandy."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_2_1594759788724",
+      "conditions": "true",
+      "dialog_node": "node_5_1594802881259",
+      "previous_sibling": "node_2_1594801180280"
+    },
+    {
+      "type": "standard",
+      "title": "Collect Name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$name"
+              },
+              {
+                "text": "Is this how you would want me to call you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_2_1594759788724",
+      "context": {
+        "name": "<? input.text ?>",
+        "turnOnYesNo": false,
+        "nameConfirmation": true
+      },
+      "conditions": "true",
+      "dialog_node": "node_7_1594760511557"
+    },
+    {
+      "type": "standard",
+      "title": "I would not like to meet them",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "That is a shame, I am sorry to hear that. Thank you for your time anyways."
+              },
+              {
+                "text": "Have a good day... Bye!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "context": {
+        "turnOnYesNo": false
+      },
+      "conditions": "$turnOnYesNo && #NegativeAnswer",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1594760135537",
+      "previous_sibling": "node_2_1594759788724"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh sorry, my bad... Can you repeat me your name please?"
+              },
+              {
+                "text": "Im sorry, can you say your name again?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1594761216996",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_7_1594760511557"
+      },
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "response_1_1594761519269",
+      "previous_sibling": "response_2_1594761263337"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great! Very nice to meet you, $name"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1594761216996",
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "response_2_1594761263337"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I did not get that, sorry... How would you want me to call you?"
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_5_1594761216996",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_7_1594760511557"
+      },
+      "conditions": "true",
+      "dialog_node": "response_3_1594761951212",
+      "previous_sibling": "response_1_1594761519269"
+    },
+    {
+      "type": "standard",
+      "title": "Turn On",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi, there! It seems that there are some little buddies that are willing to be your friends. They would love to stay next to you and make you company during the day. Would you like to meet them?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "turnOnYesNo": true
+      },
+      "conditions": "#TurnOn",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "WelcomeBot",
+  "language": "en",
+  "description": ""
+}

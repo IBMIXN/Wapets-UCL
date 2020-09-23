@@ -1,0 +1,611 @@
+{
+  "intents": [
+    {
+      "intent": "Greetings1st",
+      "examples": [
+        {
+          "text": "c89a17bc-3fe8-43e8-a95a-35148e6ff4bd"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greetings2nd",
+      "examples": [
+        {
+          "text": "9d4a5208-3f78-4b55-8c2f-ffba9ce87290"
+        },
+        {
+          "text": "Hello Duke"
+        },
+        {
+          "text": "Hi Duke"
+        },
+        {
+          "text": "I want to talk to Duke"
+        }
+      ],
+      "description": "When the user appears in the room during the day, and if Duke is its favorite pet."
+    },
+    {
+      "intent": "IAmDoingBad",
+      "examples": [
+        {
+          "text": "a little bit sad"
+        },
+        {
+          "text": "Alright"
+        },
+        {
+          "text": "depressed"
+        },
+        {
+          "text": "I am feeling a little bit sad"
+        },
+        {
+          "text": "I am feeling lonely"
+        },
+        {
+          "text": "I am feeling sad"
+        },
+        {
+          "text": "I do not feel good"
+        },
+        {
+          "text": "I feel bad"
+        },
+        {
+          "text": "lonely"
+        },
+        {
+          "text": "More less"
+        },
+        {
+          "text": "Not so good"
+        },
+        {
+          "text": "Not so well"
+        },
+        {
+          "text": "Pesimistic"
+        },
+        {
+          "text": "Sad"
+        },
+        {
+          "text": "So so..."
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "IAmDoingGreat",
+      "examples": [
+        {
+          "text": "Good, very good"
+        },
+        {
+          "text": "Happy"
+        },
+        {
+          "text": "I am doing great"
+        },
+        {
+          "text": "I am feeling positive"
+        },
+        {
+          "text": "I am good"
+        },
+        {
+          "text": "I am ok"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "IDontHaveAPlan",
+      "examples": [
+        {
+          "text": "I do not have a plan in mind"
+        },
+        {
+          "text": "I do not have a plan yet"
+        },
+        {
+          "text": "I don't have anything in mind"
+        },
+        {
+          "text": "I have not thought of anything"
+        },
+        {
+          "text": "No"
+        },
+        {
+          "text": "No plan"
+        },
+        {
+          "text": "Nothing"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "IHaveAPlan",
+      "examples": [
+        {
+          "text": "I am thinking of"
+        },
+        {
+          "text": "I am thinking of dancing jazz music"
+        },
+        {
+          "text": "I will"
+        },
+        {
+          "text": "My plan is to"
+        },
+        {
+          "text": "Perhaps I will"
+        },
+        {
+          "text": "Today I will"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "NegativeAnswer",
+      "examples": [
+        {
+          "text": "I do not know"
+        },
+        {
+          "text": "I do not like that"
+        },
+        {
+          "text": "I don't like that"
+        },
+        {
+          "text": "Maybe"
+        },
+        {
+          "text": "Mmmmm"
+        },
+        {
+          "text": "No"
+        },
+        {
+          "text": "No I don't think so..."
+        },
+        {
+          "text": "that does not sound good"
+        },
+        {
+          "text": "that is boring"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "PositiveAnswer",
+      "examples": [
+        {
+          "text": "I like that"
+        },
+        {
+          "text": "Of course"
+        },
+        {
+          "text": "Oh true, let's do that"
+        },
+        {
+          "text": "Sure, I like that"
+        },
+        {
+          "text": "Yes"
+        },
+        {
+          "text": "Yes, that is a great idea!"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Woof woof! I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Woof? I'm not understanding."
+              },
+              {
+                "text": "Woops... I didn't get your what you were meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_1_1595513224179",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "I am doing bad",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Don't be sad! Think of all the things you can be thankful for! "
+              },
+              {
+                "text": "Owww noo... Everyday is a miracle of life, let's be positive about today!"
+              },
+              {
+                "text": "No need to be upset... There is no rainbow without rain; let's enjoy the rainbow of this day!"
+              },
+              {
+                "text": "But you look so beautiful when you are happy! Lets be thankful for this new day! "
+              },
+              {
+                "text": "Don't be sad! You are a beautiful person... a sad face does not fit you well... "
+              },
+              {
+                "text": "Owww noo... every day is a new opportunity, let's give ourselves a chance! "
+              },
+              {
+                "text": "No need to be down... it will be a wonderful day!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Let's be positive about it. Let us know if you want to chat with any of us during the day. We are here for you. Omar is excited to read you some trending information about anything you want and Sandy can help you send any message to your relatives."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1595349901322",
+      "conditions": "#IAmDoingBad",
+      "dialog_node": "node_10_1595411982912",
+      "previous_sibling": "node_4_1595350102793"
+    },
+    {
+      "type": "standard",
+      "title": "Greetings 2nd",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey hey!! Woof Woof! I am so happy to see you again, watsonUserName! How are you feeling?"
+              },
+              {
+                "text": "Woof Woof! I love you so much, watsonUserName! How are you feeling?"
+              },
+              {
+                "text": "Woof Woof! There you are, watsonUserName! How are you feeling?"
+              },
+              {
+                "text": "Woof Woof! Hi, watsonUserName! I love being next to you, how are you feeling?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Greetings2nd",
+      "dialog_node": "node_1_1595513224179",
+      "previous_sibling": "node_9_1595349049472"
+    },
+    {
+      "type": "standard",
+      "title": "I am good",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh that makes me so happy! I like your positive vibes..."
+              },
+              {
+                "text": "Wonderful! Let's keep that energy today"
+              },
+              {
+                "text": "Woof! I am so happy to hear that; it is always important to know that everyday is a gift."
+              },
+              {
+                "text": "Wonderful, woof woof! I am super happy to hear that... I can't wait for today's adventures too..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Let us know if you want to chat with any of us. We are here for you. Omar is excited to read you some trending information about anything you want and Sandy can help you send any message to your relatives."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1595513224179",
+      "conditions": "#IAmDoingGreat",
+      "dialog_node": "node_1_1595513518915"
+    },
+    {
+      "type": "standard",
+      "title": "I have a plan",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh, that seems like fun! And how are you feeling today?"
+              },
+              {
+                "text": "Oh fantastic! I hope that goes well. And how do you feel today?"
+              },
+              {
+                "text": "Wonderful, it is always good to do that. And how do you find yourself today?"
+              },
+              {
+                "text": "Greats, let's do that today then. And how are you doing?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1595349049472",
+      "conditions": "#IHaveAPlan",
+      "dialog_node": "node_2_1595349901322"
+    },
+    {
+      "type": "standard",
+      "title": "I am doing bad",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Don't be sad! Think of all the things you can be thankful for!"
+              },
+              {
+                "text": "Owww noo... Everyday is a miracle of life, let's be positive about today!"
+              },
+              {
+                "text": "No need to be upset... There is no rainbow without rain; let's enjoy the rainbow of this day!"
+              },
+              {
+                "text": "There are always bad days, let's change it and let's be positive for the rest of it."
+              },
+              {
+                "text": "Don't be sad! You are a beautiful person... a sad face does not fit you well..."
+              },
+              {
+                "text": "Owww noo... but there is still some time for the day to finish, let's change how things are going"
+              },
+              {
+                "text": "No need to be sad... it is only a bad day today maybe... tomorrow will be better!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Let us know if you want to chat with any of us. We are here for you. Omar is excited to read you some trending information about anything you want and Sandy can help you send any message to your relatives."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1595513224179",
+      "conditions": "#IAmDoingBad",
+      "dialog_node": "node_2_1595513547102",
+      "previous_sibling": "node_1_1595513518915"
+    },
+    {
+      "type": "standard",
+      "title": "I am good",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh that makes me so happy! I like your positive vibes... Let us know if you want to chat with any of us during the day. We are here for you. Omar is excited to read you some trending information about anything you want and Sandy can help you send any message to your relatives."
+              },
+              {
+                "text": "Wonderful! Let's keep that energy today... Let us know if you want to chat with any of us during the day. We are here for you. Omar is excited to read you some trending information about anything you want and Sandy can help you send any message to your relatives."
+              },
+              {
+                "text": "Woof! I am so happy to hear that; it is always important to know that everyday is a gift... Let us know if you want to chat with any of us during the day. We are here for you. Omar is excited to read you some trending information about anything you want and Sandy can help you send any message to your relatives."
+              },
+              {
+                "text": "Wonderful, woof woof! I am super happy to hear that... I can't wait for today's adventures too... Let us know if you want to chat with any of us during the day. We are here for you. Omar is excited to read you some trending information about anything you want and Sandy can help you send any message to your relatives."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1595349901322",
+      "conditions": "#IAmDoingGreat",
+      "dialog_node": "node_4_1595350102793"
+    },
+    {
+      "type": "standard",
+      "title": "That plan sounds good",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great then! And how are you feeling today?"
+              },
+              {
+                "text": "Good! And how do you feel today?"
+              },
+              {
+                "text": "Perfect then! And how do you find yourself today?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_8_1595350578051",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_4_1595350102793"
+      },
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_5_1595350996287"
+    },
+    {
+      "type": "standard",
+      "title": "I have no plan",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh, why don't we think of something... what about reading a book, knitting something or going for a walk?"
+              },
+              {
+                "text": "Oh, let's think... why don't you cook something, watch the TV, or play a board game?"
+              },
+              {
+                "text": "Mmmm... what can you do? Why don't you order our drawer, call a friend, or open some pictures?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1595349049472",
+      "conditions": "#IDontHaveAPlan || #NegativeAnswer",
+      "dialog_node": "node_8_1595350578051",
+      "previous_sibling": "node_2_1595349901322"
+    },
+    {
+      "type": "standard",
+      "title": "Good morning",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Woof Woof! Good morning, watsonUserName, how are you? What are your plans today?"
+              },
+              {
+                "text": "Woof Woof! I am so happy to see you today, watsonUserName! What are you thinking to do?"
+              },
+              {
+                "text": "Woof Woof! There you are, I was missing you, what are you going to do today, watsonUserName?"
+              },
+              {
+                "text": "Woof Woof, Good morning! I hope you slept very good, are you thinking of doing something special today? What is it?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "emotion": "happy"
+      },
+      "conditions": "#Greetings1st",
+      "dialog_node": "node_9_1595349049472"
+    },
+    {
+      "type": "standard",
+      "title": "That plan sounds bad",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oww... let's see. You can always chat with any of us now or during the day. We are here for you. Polly is happy to hear your stories, Oliver is excited to read you some trending information about anything you want, Steven is willing to do some relaxing exercises and Sandy can help you send any message to your relatives."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1595350578051",
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_9_1595351147964",
+      "previous_sibling": "node_5_1595350996287"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "DukeBot",
+  "language": "en",
+  "description": ""
+}

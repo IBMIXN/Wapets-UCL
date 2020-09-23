@@ -1,0 +1,1047 @@
+{
+  "intents": [
+    {
+      "intent": "Greetings",
+      "examples": [
+        {
+          "text": "Aloha"
+        },
+        {
+          "text": "Appearance"
+        },
+        {
+          "text": "Good afternoon"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hello, Omar"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hi Hi!"
+        },
+        {
+          "text": "How are you?"
+        },
+        {
+          "text": "I am here"
+        },
+        {
+          "text": "User woke up"
+        },
+        {
+          "text": "Wakes up"
+        }
+      ],
+      "description": "When the user appears in the room during the day, and if Oliver is its favorite pet."
+    },
+    {
+      "intent": "IWouldLikeToHearOrSeeVideos",
+      "examples": [
+        {
+          "text": "I want to hear videos"
+        },
+        {
+          "text": "I want to see videos in Youtube"
+        },
+        {
+          "text": "Videos"
+        },
+        {
+          "text": "Youtube"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "NegativeAnswer",
+      "examples": [
+        {
+          "text": "No"
+        },
+        {
+          "text": "Nope"
+        },
+        {
+          "text": "No, please"
+        },
+        {
+          "text": "Not at all"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "NoInterestKnown",
+      "examples": [
+        {
+          "text": "d6557376-2247-4359-878e-c68236180a20"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "NoMoreInterestsToConfirm",
+      "examples": [
+        {
+          "text": "cee27611-c066-407b-8717-c2fac6061b23"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "NoVideoWasFound",
+      "examples": [
+        {
+          "text": "a97fc8ed-21a7-4a6a-89b0-5535ca0beacf"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "PositiveAnswer",
+      "examples": [
+        {
+          "text": "I want"
+        },
+        {
+          "text": "Of course"
+        },
+        {
+          "text": "sure"
+        },
+        {
+          "text": "Yes"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "SomeInterestAreKnown",
+      "examples": [
+        {
+          "text": "6540bf96-201b-47db-8eac-18602d6677b0"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "SomeVideosWereFound",
+      "examples": [
+        {
+          "text": "e76e221d-ea9d-489a-9b6e-a4bfcd913b40"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ThereAreInterestsToConfirm",
+      "examples": [
+        {
+          "text": "5c21c58f-72a1-4a82-9e94-47dd1cccac4d"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "TimeToAskAboutInterests",
+      "examples": [
+        {
+          "text": "a0d8e1e4-6505-441a-9236-518de55a5dcf"
+        },
+        {
+          "text": "Confirm interests"
+        },
+        {
+          "text": "I want to confirm my interests"
+        },
+        {
+          "text": "I would like to confirm you about some interests"
+        },
+        {
+          "text": "Talk about my interests"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "TimeToAskMoreInterests",
+      "examples": [
+        {
+          "text": "c53ced4b-b69f-4702-aa8b-9f382508ed33"
+        },
+        {
+          "text": "I have a new interest"
+        },
+        {
+          "text": "I would like to tell you another interest"
+        },
+        {
+          "text": "new interest"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "TimeToWatchVideos",
+      "examples": [
+        {
+          "text": "50a7c6dc-53b0-44cb-8fa7-47e27eb60854"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Video",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Interest",
+          "synonyms": [
+            "topic of interest"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Video",
+          "synonyms": [
+            "audio",
+            "clips",
+            "movie",
+            "videos",
+            "youtube"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh sorry, I did not get that. Can you try again?"
+              },
+              {
+                "text": "Can you say that again? I did not get it."
+              },
+              {
+                "text": "Owww, sorry... I didn't get your what you meant. Can you repeat it?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_7_1597785219743",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Negative Answer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "No problem. Let me know if I can help you with anything else."
+              },
+              {
+                "text": "Alright, let me when you want to see any videos in the future."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1597782945018",
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_10_1597784503337",
+      "previous_sibling": "node_2_1597784407491"
+    },
+    {
+      "type": "standard",
+      "title": "Greetings",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi watsonUserName! I hope you are feeling very good. Let me know if you wish to watch some interesting videos in YouTube. "
+              },
+              {
+                "text": "Hello watsonUserName, I was missing to watch videos in Youtube with you. Let me know when that happens. "
+              },
+              {
+                "text": "Hello watsonUserName... there are more things in the internet waiting for you; do you want to watch any video with me? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#Greetings",
+      "dialog_node": "node_10_1598366208323"
+    },
+    {
+      "type": "standard",
+      "title": "Yes I am interested",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "c1016336-44b3-4442-9de7-3b9c281ae163"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1599061038876",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_6_1599060296957"
+      },
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_10_1599061227033"
+    },
+    {
+      "type": "standard",
+      "title": "Negative Answer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh no worries... if you think of something, let me know!"
+              },
+              {
+                "text": "Oh ok... if you remember any, let me know!"
+              },
+              {
+                "text": "No problem... let me know if you think of any later."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1599082421576",
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_10_1599082711571",
+      "previous_sibling": "node_5_1599082696967"
+    },
+    {
+      "type": "standard",
+      "title": "Yes I want",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "8d071938-b876-4264-af65-fe5a1f1df02f"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1599138046182",
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_10_1599138174320"
+    },
+    {
+      "type": "standard",
+      "title": "About what?",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "About which topic would you like to hear?"
+              },
+              {
+                "text": "About which interest would you like to watch a video?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1597704212433",
+      "context": {
+        "interestToHear": "<? input.text ?>"
+      },
+      "conditions": "#PositiveAnswer || #NegativeAnswer",
+      "dialog_node": "node_1_1597704368355"
+    },
+    {
+      "type": "standard",
+      "title": "No",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh sorry, please tell me again: about what topic would you like to hear about?"
+              },
+              {
+                "text": "Oupss, sorry, my bad! About which interest of yours would you like to watch Youtube videos?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1597705588863",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1597704368355"
+      },
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_1_1597705709986"
+    },
+    {
+      "type": "standard",
+      "title": "No Interests are known",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes sure! Sorry, so far I do not know which are your interests. "
+              },
+              {
+                "text": "Of course, let's watch some videos together! So far I do not know so much about your interests."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1597704368355"
+      },
+      "conditions": "#NoInterestKnown",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1597705999811",
+      "previous_sibling": "node_8_1597693625148"
+    },
+    {
+      "type": "standard",
+      "title": "Confirm Interest To Hear",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Is it true that you want to watch videos about $interestToHear?"
+              },
+              {
+                "text": "So you want to watch videos about $interestToHear, did I get it right?"
+              },
+              {
+                "text": "So, you would like to hear about $interestToHear, is that correct?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1597704368355",
+      "context": {
+        "interestToHear": "<? input.text ?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1597705588863"
+    },
+    {
+      "type": "standard",
+      "title": "Yes",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Perfect! Let me look for videos about $interestToHear. f2f9bbf6-3c2e-4463-a87a-b0d1caefaf0d"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1597705588863",
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_2_1597705767417",
+      "previous_sibling": "node_1_1597705709986"
+    },
+    {
+      "type": "standard",
+      "title": "Positive Answer",
+      "parent": "node_4_1597782945018",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1597704368355"
+      },
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_2_1597784407491"
+    },
+    {
+      "type": "standard",
+      "title": "TimeToAskAboutInterests",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I heard you talking about some interesting topics before. I would like to know you better, so maybe you can tell me if these topics are of your interests. Are you ready?"
+              },
+              {
+                "text": "I previously heard you mentioned some interesting topics. I wonder if they are of your interest. Do you want to hear them and confirm me?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#TimeToAskAboutInterests",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1599060074306",
+      "previous_sibling": "node_8_1599082421576"
+    },
+    {
+      "type": "standard",
+      "title": "Confirm Interest",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Alright then. I heard you talked about $interestToConfirm. Is this one of your interests?"
+              },
+              {
+                "text": "Perfect. You mentioned something about $interestToConfirm. Are you interested in this?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1599064443795",
+      "context": {
+        "interestToConfirm": "<? input.text ?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1599061038876"
+    },
+    {
+      "type": "standard",
+      "title": "Hear interest",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Is it true that you are interested about $interestSaid?"
+              },
+              {
+                "text": "Oh, I heard $interestSaid... did I hear your interest right?"
+              },
+              {
+                "text": "Are you interested in $interestSaid?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1599082696967",
+      "context": {
+        "interestSaid": "<? input.text ?>"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1599082828937"
+    },
+    {
+      "type": "standard",
+      "title": "No I do not have another interest",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "No worries, if you think of something, let me know!"
+              },
+              {
+                "text": "No problem, if you remember any later, let me know!"
+              },
+              {
+                "text": "Ok! let me know if you think of any later."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1599082945029",
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_2_1599083231412",
+      "previous_sibling": "node_3_1599083141728"
+    },
+    {
+      "type": "standard",
+      "title": "Yes it is correct",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh great, I will save it in my memory then. Is there any other interest you have? 8152b6b4-fffe-49b9-ac88-f54bd94baa9b"
+              },
+              {
+                "text": "I see, great! We can watch videos about $interestSaid later then. Is there any other interest you have? 8152b6b4-fffe-49b9-ac88-f54bd94baa9b"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1599082828937",
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_3_1599082945029"
+    },
+    {
+      "type": "standard",
+      "title": "Yes I have another interest",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh perfect, let me hear it then! What is your other interest?"
+              },
+              {
+                "text": "Oh wonderful... Which is your other interest?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1599082945029",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_2_1599082828937"
+      },
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_3_1599083141728"
+    },
+    {
+      "type": "standard",
+      "title": "No videos were found",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I am sorry, I could not find any videos related to $interestToHear. Do you want to try with another term?"
+              },
+              {
+                "text": "Oh, it seems that there are no videos relate to $interestToHear. Do you want to search for another word?"
+              },
+              {
+                "text": "Sorry, there are videos in Youtube related to $interestToHear. Would you like to try it again?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#NoVideoWasFound",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1597782945018",
+      "previous_sibling": "node_9_1597704212433"
+    },
+    {
+      "type": "standard",
+      "title": "No I am not interested",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ab56049b-9307-48d4-97ed-b71bd0c5f662"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1599061038876",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_6_1599060296957"
+      },
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_4_1599061348790",
+      "previous_sibling": "node_10_1599061227033"
+    },
+    {
+      "type": "standard",
+      "title": "There are interests to confirm",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "e538437a-1373-4c4f-910e-74978a95bbd9"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1599060296957",
+      "conditions": "#ThereAreInterestsToConfirm",
+      "dialog_node": "node_4_1599064443795"
+    },
+    {
+      "type": "standard",
+      "title": "No I do not want",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh ok, no problem. We can do it later if you want. "
+              },
+              {
+                "text": "Oh no worries. Let me know if you feel like watching videos later."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1599138046182",
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_4_1599138206461",
+      "previous_sibling": "node_10_1599138174320"
+    },
+    {
+      "type": "standard",
+      "title": "There are no more interests to confirm",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "There are no more interests I heard you talking about. I will tell you if I hear you mentioning any topic I am curious about."
+              },
+              {
+                "text": "That is all, I will let you know when I am curious about any other interest of yours."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1599060296957",
+      "conditions": "#NoMoreInterestsToConfirm",
+      "dialog_node": "node_5_1599064683977",
+      "previous_sibling": "node_4_1599064443795"
+    },
+    {
+      "type": "standard",
+      "title": "Positive Answer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh nice, which is this interest?"
+              },
+              {
+                "text": "Oh good, tell me what is it..."
+              },
+              {
+                "text": "Wonderful, what is it?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1599082421576",
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_5_1599082696967"
+    },
+    {
+      "type": "standard",
+      "title": "No it is not correct",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh sorry... I must have heard wrong. Let me hear your interest again..."
+              },
+              {
+                "text": "Oupss, sorry! Let me hear the interest you have again, please..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1599082828937",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_2_1599082828937"
+      },
+      "dialog_node": "node_5_1599082954184",
+      "previous_sibling": "node_3_1599082945029"
+    },
+    {
+      "type": "standard",
+      "title": "Yes",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "6ccb9789-5c3a-4e1b-9beb-11580e5ee33e"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1599060074306",
+      "conditions": "#PositiveAnswer",
+      "dialog_node": "node_6_1599060296957"
+    },
+    {
+      "type": "standard",
+      "title": "Some videos were found",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "There seems to be very interesting videos in Youtube about $interestToHear. Let's watch them together, they are waiting for you in the Watch Youtube tab. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#SomeVideosWereFound",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1597785219743",
+      "previous_sibling": "node_4_1597782945018"
+    },
+    {
+      "type": "standard",
+      "title": "Time to watch videos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey, it has been a while since we do not watch some videos in Youtube. Do you want to watch some now?"
+              },
+              {
+                "text": "Hey, I felt like watching some videos with you... what do you say? Do you want?"
+              },
+              {
+                "text": "Hey, why not watching some interesting videos in Youtube?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#TimeToWatchVideos",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1599138046182",
+      "previous_sibling": "node_10_1598366208323"
+    },
+    {
+      "type": "standard",
+      "title": "I want to hear or see a video",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "8d071938-b876-4264-af65-fe5a1f1df02f"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#IWouldLikeToHearOrSeeVideos || @Video",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1597693625148",
+      "previous_sibling": "node_2_1599060074306"
+    },
+    {
+      "type": "standard",
+      "title": "Time to ask more interests",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey there... I was wondering if you have any interest I do not know about yet so we can watch videos later about this ... Is there any sport, type of music, artist, etc. that you are interested about?"
+              },
+              {
+                "text": "Hey, I was thinking... is there any interest you have that I particularly do not know about? We can maybe watch videos about it later... Any hobbies you have or used to have? Do you have? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#TimeToAskMoreInterests",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1599082421576",
+      "previous_sibling": "node_7_1599138046182"
+    },
+    {
+      "type": "standard",
+      "title": "Some Interests are known",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes sure! Let's watch some videos. So far I know you like: 9bb84e50-262b-4b15-882a-6c3018d98a06. Do you want to hear about any of these?"
+              },
+              {
+                "text": "Of course! Let's explore what is on Youtube. So far I know you are interested in: 9bb84e50-262b-4b15-882a-6c3018d98a06. Would you like to watch videos about any of these?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#SomeInterestAreKnown",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1597704212433",
+      "previous_sibling": "node_1_1597705999811"
+    },
+    {
+      "type": "standard",
+      "title": "No",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Oh, no worries, we can do this later."
+              },
+              {
+                "text": "No problem, I will ask you another time. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1599060074306",
+      "conditions": "#NegativeAnswer",
+      "dialog_node": "node_9_1599060307263",
+      "previous_sibling": "node_6_1599060296957"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "OmarBot",
+  "language": "en",
+  "description": ""
+}
