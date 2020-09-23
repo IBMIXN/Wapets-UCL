@@ -1,6 +1,5 @@
-# Wapets
+# Wapets (UCL - IBM Collaboration)
 ## MSc Computer Science Dissertation project
-## UCL and IBM
 by Natalia del Mar
 
 
