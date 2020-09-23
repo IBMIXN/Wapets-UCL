@@ -15,7 +15,5 @@ Aditionally, attempts to mitigate loneliness and social isolation, and their neg
 
 Wapets is an explorative model developed in Node-RED that uses IBM Watson Assistant services to create a multichatbot conversational system for the elder to use. It has a simple interface with which the user can talk and listen to the answer of the pets. The pets are ready to handle basic requests like greetings, but also more advanced requests like sending and receiving private messages via Facebook Messenger and browsing videos online in YouTube. The idea is to provide the elder with company, but also to be an intuitive gateway to the outside world.
 
-##Demo 
-
 A demo of the application can be found here: https://www.youtube.com/watch?v=CWXjrlhYtak&t=3s
 
